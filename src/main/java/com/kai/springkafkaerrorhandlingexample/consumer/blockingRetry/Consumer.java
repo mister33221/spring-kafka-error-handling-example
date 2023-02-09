@@ -35,8 +35,8 @@ public class Consumer {
             log.error("failed to consume - key: {}", message.key());
             // send failed event to another retry topic
             // If you want to test no-bloking retry, you have to comment out code which are marked "For blocking retry" in KafkaConfig.java
-//            template.send("blocking-products-retry", message.key(), message.value());
-            template.send("no-bloking-multipleTopicRetryConsumer-products-retry", message.key(), message.value());
+            template.send("blocking-products-retry", message.key(), message.value());
+//            template.send("no-bloking-multipleTopicRetryConsumer-products-retry", message.key(), message.value());
 //            template.send("no-bloking-singleTopicRetryConsumer-products-retry", message.key(), message.value());
         }
 

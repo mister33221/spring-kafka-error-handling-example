@@ -5,28 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9716ba51-367d-4d7a-97c0-e575f7226176" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/spring-kafka-error-handling-example.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-kafka-error-handling-example/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-kafka-error-handling-example/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-kafka-error-handling-example/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-kafka-error-handling-example/docker-compose.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-kafka-error-handling-example/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-kafka-error-handling-example/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-kafka-error-handling-example/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-kafka-error-handling-example/src/main/java/com/kai/springkafkaerrorhandlingexample/SpringKafkaErrorHandlingExampleApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-kafka-error-handling-example/src/main/java/com/kai/springkafkaerrorhandlingexample/config/KafkaConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-kafka-error-handling-example/src/main/java/com/kai/springkafkaerrorhandlingexample/consumer/blockingRetry/BlockingRetryConsumer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-kafka-error-handling-example/src/main/java/com/kai/springkafkaerrorhandlingexample/consumer/blockingRetry/Consumer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-kafka-error-handling-example/src/main/java/com/kai/springkafkaerrorhandlingexample/consumer/noBlockingRetry/MultipleTopicRetryConsumer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-kafka-error-handling-example/src/main/java/com/kai/springkafkaerrorhandlingexample/consumer/noBlockingRetry/SingleTopicRetryConsumer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-kafka-error-handling-example/src/main/java/com/kai/springkafkaerrorhandlingexample/producer/Producer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-kafka-error-handling-example/src/main/resources/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-kafka-error-handling-example/src/test/java/com/kai/springkafkaerrorhandlingexample/SpringKafkaErrorHandlingExampleApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kai/springkafkaerrorhandlingexample/consumer/blockingRetry/Consumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kai/springkafkaerrorhandlingexample/consumer/blockingRetry/Consumer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +78,7 @@
       <updated>1675919388750</updated>
       <workItem from="1675919390109" duration="7457000" />
       <workItem from="1675927343319" duration="4658000" />
-      <workItem from="1675933481257" duration="17000" />
+      <workItem from="1675933481257" duration="648000" />
     </task>
     <servers />
   </component>
