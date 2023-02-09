@@ -140,7 +140,7 @@ https://github.com/mister33221/spring-kafka-error-handling-example.git
 
     }
     ```
-    * 倒數三行為三種不同處理方式，可透過註解來選用。如果要使用blocking的話，要到config中將我有標注for blocking retry的部分註解起來。
+    * 倒數三行為三種不同處理方式，可透過註解來選用。如果要使用non-blocking的話，要到config中將我有標注for blocking retry的部分註解起來。
 
         1. 我們使用[Control Centeter-localhost:9021](http://localhost:9021/clusters)來進行測試
            ![](https://i.imgur.com/mle34NP.png)
