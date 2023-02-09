@@ -1,11 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="5e849ba0-c0ef-4fdc-a00f-0ae8014ad2d0" name="Changes" comment="" />
+    <list default="true" id="9716ba51-367d-4d7a-97c0-e575f7226176" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/spring-kafka-error-handling-example.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-kafka-error-handling-example/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-kafka-error-handling-example/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-kafka-error-handling-example/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-kafka-error-handling-example/docker-compose.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-kafka-error-handling-example/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-kafka-error-handling-example/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-kafka-error-handling-example/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-kafka-error-handling-example/src/main/java/com/kai/springkafkaerrorhandlingexample/SpringKafkaErrorHandlingExampleApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-kafka-error-handling-example/src/main/java/com/kai/springkafkaerrorhandlingexample/config/KafkaConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-kafka-error-handling-example/src/main/java/com/kai/springkafkaerrorhandlingexample/consumer/blockingRetry/BlockingRetryConsumer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-kafka-error-handling-example/src/main/java/com/kai/springkafkaerrorhandlingexample/consumer/blockingRetry/Consumer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-kafka-error-handling-example/src/main/java/com/kai/springkafkaerrorhandlingexample/consumer/noBlockingRetry/MultipleTopicRetryConsumer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-kafka-error-handling-example/src/main/java/com/kai/springkafkaerrorhandlingexample/consumer/noBlockingRetry/SingleTopicRetryConsumer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-kafka-error-handling-example/src/main/java/com/kai/springkafkaerrorhandlingexample/producer/Producer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-kafka-error-handling-example/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-kafka-error-handling-example/src/test/java/com/kai/springkafkaerrorhandlingexample/SpringKafkaErrorHandlingExampleApplicationTests.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -13,28 +46,60 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2LUIcMa5BqRPYZUydK9m6LwfuH8" />
+  <component name="ProjectId" id="2LUIlTfsfU1kfcQrwO7oq3cgbt0" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/Systex/test/spring-kafka-error-handling-example"
+    "last_opened_file_path": "D:/Systex/test/spring-kafka-error-handling-example",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
+    "spring.configuration.checksum": "6ebce76d1eb1d33f8fa7030e9a41e9c1"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Systex\test\kafka-error-handling\spring-kafka-error-handling-example\src\main\resources" />
+      <recent name="D:\Systex\test\kafka-error-handling\spring-kafka-error-handling-example" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="SpringKafkaErrorHandlingExampleApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="spring-kafka-error-handling-example" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.kai.springkafkaerrorhandlingexample.SpringKafkaErrorHandlingExampleApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="5e849ba0-c0ef-4fdc-a00f-0ae8014ad2d0" name="Changes" comment="" />
-      <created>1675919313266</created>
+      <changelist id="9716ba51-367d-4d7a-97c0-e575f7226176" name="Changes" comment="" />
+      <created>1675919388750</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1675919313266</updated>
-      <workItem from="1675919314802" duration="73000" />
+      <updated>1675919388750</updated>
+      <workItem from="1675919390109" duration="7457000" />
+      <workItem from="1675927343319" duration="4658000" />
+      <workItem from="1675933481257" duration="17000" />
     </task>
     <servers />
   </component>
@@ -51,5 +116,16 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/kai/springkafkaerrorhandlingexample/config/KafkaConfig.java</url>
+          <line>56</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

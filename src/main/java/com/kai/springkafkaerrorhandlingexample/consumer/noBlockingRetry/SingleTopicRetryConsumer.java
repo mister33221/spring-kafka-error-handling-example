@@ -24,7 +24,7 @@ public class SingleTopicRetryConsumer {
     // includeNames: It is used to specify the exception names to retry.
     @RetryableTopic(
         attempts = "5",
-        backoff = @Backoff(delay = 2000, multiplier = 2.0),
+        backoff = @Backoff(delay = 1000, multiplier = 1.0),
         fixedDelayTopicStrategy = FixedDelayStrategy.SINGLE_TOPIC,
         include = {ClassCastException.class},
         includeNames = "java.lang.ClassCastException")
@@ -35,7 +35,7 @@ public class SingleTopicRetryConsumer {
                 message.key(),
                 message.value(),
                 message.topic());
-            throw new ClassCastException("Exception in main consumer");
+            throw new ClassCastException("Exception in no-bloking-singleTopicRetryConsumer-products-retry consumer");
     }
 
     // @DltHandler: This annotation is used to configure the dead letter topic.

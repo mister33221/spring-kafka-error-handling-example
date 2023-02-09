@@ -30,7 +30,7 @@ public class MultipleTopicRetryConsumer {
     @KafkaListener(topics = "no-bloking-multipleTopicRetryConsumer-products-retry")
     public void listen(ConsumerRecord<String, String> message) {
         log.info("MultipleTopicRetryConsumer retrying message - key: {} , value: {}, at: {}, offset: {}", message.key(), message.value(), LocalDateTime.now(), message.offset());
-        throw new RuntimeException("Exception in retry consumer");
+        throw new RuntimeException("Exception in no-bloking-multipleTopicRetryConsumer-products-retry consumer");
     }
 
     // The DLT handler is used to handle the messages that have exceeded the maximum number of retries.

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/spring-kafka-error-handling-example.iml" filepath="$PROJECT_DIR$/.idea/spring-kafka-error-handling-example.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-kafka-error-handling-example.iml" filepath="$PROJECT_DIR$/spring-kafka-error-handling-example.iml" />
     </modules>
   </component>
 </project>

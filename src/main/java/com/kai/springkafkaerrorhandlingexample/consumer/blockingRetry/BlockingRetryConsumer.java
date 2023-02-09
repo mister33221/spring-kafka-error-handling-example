@@ -18,7 +18,7 @@ public class BlockingRetryConsumer {
     @KafkaListener(topics = "blocking-products-retry", containerFactory = "kafkaBlockingRetryContainerFactory")
     public void listen(ConsumerRecord<String, String> message, @Header(KafkaHeaders.RECEIVED_TOPIC) String topic) throws Exception {
         log.info("retrying message - key: {} , value: {}, at: {}, offset: {}", message.key(), message.value(), message.offset());
-        throw new Exception("Exception in retry consumer");
+        throw new Exception("Exception in blocking-products-retry consumer");
     }
 
     // @KafkaListener: It is used to listen to the messages from the specified topic.
