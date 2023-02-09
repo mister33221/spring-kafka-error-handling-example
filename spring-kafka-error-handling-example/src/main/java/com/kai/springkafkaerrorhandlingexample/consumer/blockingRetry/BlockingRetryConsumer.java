@@ -15,7 +15,7 @@ public class BlockingRetryConsumer {
 
     // @KafkaListener: It is used to listen to the messages from the specified topic.
     // listen: This method is used to listen to the messages from the Retry Topic.
-    @KafkaListener(topics = "products-retry", containerFactory = "kafkaBlockingRetryContainerFactory")
+    @KafkaListener(topics = "blocking-products-retry", containerFactory = "kafkaBlockingRetryContainerFactory")
     public void listen(ConsumerRecord<String, String> message, @Header(KafkaHeaders.RECEIVED_TOPIC) String topic) throws Exception {
         log.info("retrying message - key: {} , value: {}, at: {}, offset: {}", message.key(), message.value(), message.offset());
         throw new Exception("Exception in retry consumer");
@@ -25,7 +25,8 @@ public class BlockingRetryConsumer {
     // listenDLT: This method is used to listen to the messages from the Dead Letter Topic.
     @KafkaListener(topics = "products-retry.DLT")
     public void listenDLT(String message, @Header(KafkaHeaders.RECEIVED_TOPIC) String topic){
-        log.info("received DLT message : [{}] from topic : [{}] at [{}]", message, topic, LocalDateTime.now());
+        log.info("blocking-products-retry: message consumed at DLT - \nkey: {} , \nvalue: {}, \ntopic: {}",
+                message, topic);
     }
 
 }

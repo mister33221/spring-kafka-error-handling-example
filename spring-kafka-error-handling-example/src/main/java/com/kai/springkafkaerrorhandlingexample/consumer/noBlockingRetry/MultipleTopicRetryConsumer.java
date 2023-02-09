@@ -27,7 +27,7 @@ public class MultipleTopicRetryConsumer {
             backoff = @Backoff(delay = 1000, multiplier = 1.0),
             autoCreateTopics = "false",
             topicSuffixingStrategy = TopicSuffixingStrategy.SUFFIX_WITH_INDEX_VALUE)
-    @KafkaListener(topics = "products-master")
+    @KafkaListener(topics = "no-bloking-multipleTopicRetryConsumer-products-retry")
     public void listen(ConsumerRecord<String, String> message) {
         log.info("MultipleTopicRetryConsumer retrying message - key: {} , value: {}, at: {}, offset: {}", message.key(), message.value(), LocalDateTime.now(), message.offset());
         throw new RuntimeException("Exception in retry consumer");
@@ -36,7 +36,10 @@ public class MultipleTopicRetryConsumer {
     // The DLT handler is used to handle the messages that have exceeded the maximum number of retries.
     @DltHandler
     public void multipleTopicDLT(ConsumerRecord<String, String> message, @Header(KafkaHeaders.RECEIVED_TOPIC) String topic) {
-        log.info("message consumed - key: {} , topic: {}", message.key(), message.topic());
+        log.info("MultipleTopicRetryConsumer: message consumed at DLT - \nkey: {} , \nvalue: {}, \ntopic: {}",
+                message.key(),
+                message.value(),
+                message.topic());
     }
 
 

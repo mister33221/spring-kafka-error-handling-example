@@ -23,12 +23,12 @@ public class SingleTopicRetryConsumer {
     // include: It is used to specify the exception types to retry.
     // includeNames: It is used to specify the exception names to retry.
     @RetryableTopic(
-        attempts = "10",
-        backoff = @Backoff(delay = 5000, multiplier = 5.0),
+        attempts = "5",
+        backoff = @Backoff(delay = 2000, multiplier = 2.0),
         fixedDelayTopicStrategy = FixedDelayStrategy.SINGLE_TOPIC,
         include = {ClassCastException.class},
         includeNames = "java.lang.ClassCastException")
-    @KafkaListener(topics = "products-main")
+    @KafkaListener(topics = "no-bloking-singleTopicRetryConsumer-products-retry")
     public void listen(ConsumerRecord<String, String> message, @Header(KafkaHeaders.RECEIVED_TOPIC) String topic) {
 
             log.info("SingleTopicRetryConsumer: message consumed - \nkey: {} , \nvalue: {}, \ntopic: {}",
