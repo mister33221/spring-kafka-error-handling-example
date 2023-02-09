@@ -1,10 +1,9 @@
 # spring-kafka-error-handling-example
 
-
 {%hackmd Hy_uVFcRD %}
 # Kafka 例外處理
 
-首先，原生kafak是不支持消息重試的。但是spring kafka 2.7+ 封裝了 Retry Topic這個功能。
+首先，原生kafka是不支持消息重試的。但是spring kafka 2.7+ 封裝了 Retry Topic這個功能。
 請各位再嘗試的時候，請注意個依賴的版本問題，小弟我啟環境的時候，試了好多遍Orz。
 
 ## 專案位置
@@ -27,66 +26,7 @@ https://github.com/mister33221/spring-kafka-error-handling-example.git
 
 2. 先使用內含的docker-compose.yml搭配docker將kafka、zookeeper、broker、control-center起起來，在cmd介面中輸入以下指令
     ```
-    version: '3'
-    services:
-      zookeeper:
-        image: confluentinc/cp-zookeeper:7.0.1
-        container_name: zookeeper
-        environment:
-            ZOOKEEPER_CLIENT_PORT: 2181
-            ZOOKEEPER_TICK_TIME: 2000
-
-      broker:
-        image: confluentinc/cp-kafka:7.0.1
-        container_name: broker
-        ports:
-          - "9092:9092"
-        depends_on:
-            - zookeeper
-        environment:
-          KAFAKA_BROKER_ID: 1
-          KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
-          KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
-          KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://broker:29092,PLAINTEXT_HOST://localhost:9092
-          KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
-          KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
-          KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
-
-      control-center:
-        image: confluentinc/cp-enterprise-control-center:7.0.1
-        container_name: control-center
-        depends_on:
-          - zookeeper
-          - broker
-        ports:
-          - "9021:9021"
-        environment:
-          CONTROL_CENTER_BOOTSTRAP_SERVERS: broker:29092
-          CONTROL_CENTER_ZOOKEEPER_CONNECT: zookeeper:2181
-          CONTROL_CENTER_REPLICATION_FACTOR: 1
-          CONTROL_CENTER_INTERNAL_TOPICS_PARTITIONS: 1
-          CONTROL_CENTER_MONITORING_INTERCEPTOR_TOPIC_PARTITIONS: 1
-          CONTROL_CENTER_CONNECT_CLUSTER: "connect:8083"
-          CONTROL_CENTER_KSQL_URL: "http://ksql-server:8088"
-          CONTROL_CENTER_KSQL_ADVERTISED_URL: "http://localhost:8088"
-          CONTROL_CENTER_SCHEMA_REGISTRY_URL: "http://schema-registry:8081"
-          CONTROL_CENTER_SCHEMA_REGISTRY_ADVERTISED_URL: "http://localhost:8081"
-          CONTROL_CENTER_CONNECT_CONTROL_CENTER_TOPIC_PARTITIONS: 1
-          CONTROL_CENTER_CONNECT_CONTROL_CENTER_TOPIC_REPLICATION_FACTOR: 1
-          CONTROL_CENTER_KSQL_CONTROL_CENTER_TOPIC_PARTITIONS: 1
-          CONTROL_CENTER_KSQL_CONTROL_CENTER_TOPIC_REPLICATION_FACTOR: 1
-          CONTROL_CENTER_KSQL_METASTORE_TOPIC_PARTITIONS: 1
-          CONTROL_CENTER_KSQL_METASTORE_TOPIC_REPLICATION_FACTOR: 1
-          CONTROL_CENTER_KSQL_SERVICE_ID: "ksql_"
-          CONTROL_CENTER_KSQL_STREAMS_NUM_STREAM_THREADS: 1
-          CONTROL_CENTER_KSQL_STREAMS_NUM_REPLICATION: 1
-          CONTROL_CENTER_KSQL_STREAMS_STATE_DIR: "/tmp/ksql-server"
-          CONTROL_CENTER_KSQL_STREAMS_NUM_STANDBY_REPLICAS: 1
-          CONTROL_CENTER_KSQL_STREAMS_NUM_PARTITIONS: 1
-          CONTROL_CENTER_KSQL_STREAMS_REPLICATION_FACTOR: 1
-          CONTROL_CENTER_KSQL_STREAMS_COMMIT_INTERVAL_MS: 2000
-          CONTROL_CENTER_KSQL_STREAMS_CACHE_MAX_BYTES_BUFFERING: 0
-          PORT: 9021
+    docker-compose up
     ```
    kafka的控制平台port號為9021。
    成功完成後你可以在網址輸入localhost:9021，如果出現以下畫面就是成功了。
@@ -200,7 +140,7 @@ https://github.com/mister33221/spring-kafka-error-handling-example.git
 
     }
     ```
-    * 倒數三行為三種不同處理方式，可透過註解來選用
+    * 倒數三行為三種不同處理方式，可透過註解來選用。如果要使用blocking的話，要到config中將我有標注for blocking retry的部分註解起來。
 
         1. 我們使用[Control Centeter-localhost:9021](http://localhost:9021/clusters)來進行測試
            ![](https://i.imgur.com/mle34NP.png)
@@ -211,7 +151,7 @@ https://github.com/mister33221/spring-kafka-error-handling-example.git
            ![](https://i.imgur.com/HcsuNkA.png)
 
 
-        * block
+        * blocking
             我們可以看下圖，我只截了第一張，你會發現每次就噴一個exception，且每一次都是同一個原始的 topic ，因為他已經被鎖在上面了，造成後面連續的噴錯，而這個重試的預設機制為 retry 3次 ，每次間隔1秒。也可以到config的檔案中自行設定。
             ![](https://i.imgur.com/5ubC6Pl.png)
 
@@ -219,17 +159,16 @@ https://github.com/mister33221/spring-kafka-error-handling-example.git
             我們可以看下面的圖，發現他每次都在 topic 名稱後加上 retry 及編號，顯示出他把上一次用的 topic 放開了，並用一個全新的 topic 來進行 retry 。
             ![](https://i.imgur.com/a3Jfeb3.png)
 
-        * non-bloking-singleTopicRetryConsumer-products-retry
+        * non-blok-singleTopicRetryConsumer-products-retry
             我們可以看下面的圖，發現他開始要 retry 時，在原本的 topic 後加上 retry ，並每一次的retry都使用這個新建的 topic 來進行。
             ![](https://i.imgur.com/CmebmVO.png)
 
 
 
-其他程式碼及anotation的用法及含意，我都註解寫在code中了，
+其他程式碼及annotation的用法及含意，我都註解寫在code中了，
 想知道的話..
 ![](https://i.imgur.com/VnrRrhj.png)
 
 
 --------
 ###### tags: `kafka` `springboot`
-
