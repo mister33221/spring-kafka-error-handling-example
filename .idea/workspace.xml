@@ -5,7 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9716ba51-367d-4d7a-97c0-e575f7226176" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kai/springkafkaerrorhandlingexample/config/KafkaConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kai/springkafkaerrorhandlingexample/config/KafkaConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kai/springkafkaerrorhandlingexample/consumer/blockingRetry/BlockingRetryConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kai/springkafkaerrorhandlingexample/consumer/blockingRetry/BlockingRetryConsumer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/kai/springkafkaerrorhandlingexample/consumer/blockingRetry/Consumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kai/springkafkaerrorhandlingexample/consumer/blockingRetry/Consumer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kai/springkafkaerrorhandlingexample/consumer/noBlockingRetry/MultipleTopicRetryConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kai/springkafkaerrorhandlingexample/consumer/noBlockingRetry/MultipleTopicRetryConsumer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kai/springkafkaerrorhandlingexample/consumer/noBlockingRetry/SingleTopicRetryConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kai/springkafkaerrorhandlingexample/consumer/noBlockingRetry/SingleTopicRetryConsumer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,9 +52,9 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
+    "project.structure.last.edited": "Artifacts",
     "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
+    "project.structure.side.proportion": "0.51609194",
     "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
     "spring.configuration.checksum": "6ebce76d1eb1d33f8fa7030e9a41e9c1"
   }
@@ -78,7 +84,7 @@
       <updated>1675919388750</updated>
       <workItem from="1675919390109" duration="7457000" />
       <workItem from="1675927343319" duration="4658000" />
-      <workItem from="1675933481257" duration="648000" />
+      <workItem from="1675933481257" duration="5924000" />
     </task>
     <servers />
   </component>
@@ -95,16 +101,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/kai/springkafkaerrorhandlingexample/config/KafkaConfig.java</url>
-          <line>56</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
