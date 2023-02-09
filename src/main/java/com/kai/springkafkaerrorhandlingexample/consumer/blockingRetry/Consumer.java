@@ -8,6 +8,8 @@ import org.springframework.kafka.support.KafkaHeaders;
 import org.springframework.messaging.handler.annotation.Header;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDateTime;
+
 @Slf4j
 @Component
 public class Consumer {
@@ -27,17 +29,17 @@ public class Consumer {
     public void listen(ConsumerRecord<String, String> message, @Header(KafkaHeaders.RECEIVED_TOPIC) String topic) {
         try {
 
-            if (message.key().equals("product2")) {
+            if (message.key().equals("1")) {
                 throw new RuntimeException("Exception in main consumer");
             }
-            log.info("message consumed - key: {} , value: {}, at: {}", message.key(), message.value());
+            log.info("\nmessage consumed - \nkey: {} , \nvalue: {}, \nat: {}", message.key(), message.value(), LocalDateTime.now());
         } catch (Exception e) {
-            log.error("failed to consume - key: {}", message.key());
+            log.error("\nfailed to consume - \nkey: {}", message.key());
             // send failed event to another retry topic
             // If you want to test no-bloking retry, you have to comment out code which are marked "For blocking retry" in KafkaConfig.java
             template.send("blocking-products-retry", message.key(), message.value());
-//            template.send("no-bloking-multipleTopicRetryConsumer-products-retry", message.key(), message.value());
-//            template.send("no-bloking-singleTopicRetryConsumer-products-retry", message.key(), message.value());
+//            template.send("non-bloking-multipleTopicRetryConsumer-products-retry", message.key(), message.value());
+//            template.send("non-bloking-singleTopicRetryConsumer-products-retry", message.key(), message.value());
         }
 
     }

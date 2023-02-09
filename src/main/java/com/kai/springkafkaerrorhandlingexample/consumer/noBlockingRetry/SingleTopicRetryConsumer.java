@@ -23,25 +23,25 @@ public class SingleTopicRetryConsumer {
     // include: It is used to specify the exception types to retry.
     // includeNames: It is used to specify the exception names to retry.
     @RetryableTopic(
-        attempts = "5",
+        attempts = "3",
         backoff = @Backoff(delay = 1000, multiplier = 1.0),
         fixedDelayTopicStrategy = FixedDelayStrategy.SINGLE_TOPIC,
         include = {ClassCastException.class},
         includeNames = "java.lang.ClassCastException")
-    @KafkaListener(topics = "no-bloking-singleTopicRetryConsumer-products-retry")
+    @KafkaListener(topics = "non-bloking-singleTopicRetryConsumer-products-retry")
     public void listen(ConsumerRecord<String, String> message, @Header(KafkaHeaders.RECEIVED_TOPIC) String topic) {
 
-            log.info("SingleTopicRetryConsumer: message consumed - \nkey: {} , \nvalue: {}, \ntopic: {}",
+            log.info("\nSingleTopicRetryConsumer: message consumed - \nkey: {} , \nvalue: {}, \ntopic: {}",
                 message.key(),
                 message.value(),
                 message.topic());
-            throw new ClassCastException("Exception in no-bloking-singleTopicRetryConsumer-products-retry consumer");
+            throw new ClassCastException("Exception in non-bloking-singleTopicRetryConsumer-products-retry consumer");
     }
 
     // @DltHandler: This annotation is used to configure the dead letter topic.
     @DltHandler
     public void dltListener(ConsumerRecord<String, String> message, @Header(KafkaHeaders.RECEIVED_TOPIC) String topic) {
-        log.info("SingleTopicRetryConsumer: message consumed at DLT - \nkey: {} , \nvalue: {}, \ntopic: {}",
+        log.info("\nSingleTopicRetryConsumer: message consumed at DLT - \nkey: {} , \nvalue: {}, \ntopic: {}",
                 message.key(),
                 message.value(),
                 message.topic());

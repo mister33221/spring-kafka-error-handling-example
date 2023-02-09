@@ -23,20 +23,20 @@ public class MultipleTopicRetryConsumer {
     // The autoCreateTopics attribute specifies whether to create the retry topic automatically. In this case, it is set to false.
     // The topicSuffixingStrategy attribute specifies the topic suffixing strategy to use. In this case, it is set to SUFFIX_WITH_INDEX_VALUE.
     @RetryableTopic(
-            attempts = "4",
+            attempts = "3",
             backoff = @Backoff(delay = 1000, multiplier = 1.0),
             autoCreateTopics = "false",
             topicSuffixingStrategy = TopicSuffixingStrategy.SUFFIX_WITH_INDEX_VALUE)
-    @KafkaListener(topics = "no-bloking-multipleTopicRetryConsumer-products-retry")
+    @KafkaListener(topics = "non-bloking-multipleTopicRetryConsumer-products-retry")
     public void listen(ConsumerRecord<String, String> message) {
-        log.info("MultipleTopicRetryConsumer retrying message - key: {} , value: {}, at: {}, offset: {}", message.key(), message.value(), LocalDateTime.now(), message.offset());
-        throw new RuntimeException("Exception in no-bloking-multipleTopicRetryConsumer-products-retry consumer");
+        log.info("\nMultipleTopicRetryConsumer retrying message - \nkey: {} , \nvalue: {}, \nat: {}, \ntopic: {}", message.key(), message.value(), LocalDateTime.now(), message.topic());
+        throw new RuntimeException("Exception in non-bloking-multipleTopicRetryConsumer-products-retry consumer");
     }
 
     // The DLT handler is used to handle the messages that have exceeded the maximum number of retries.
     @DltHandler
     public void multipleTopicDLT(ConsumerRecord<String, String> message, @Header(KafkaHeaders.RECEIVED_TOPIC) String topic) {
-        log.info("MultipleTopicRetryConsumer: message consumed at DLT - \nkey: {} , \nvalue: {}, \ntopic: {}",
+        log.info("\nMultipleTopicRetryConsumer: message consumed at DLT - \nkey: {} , \nvalue: {}, \ntopic: {}",
                 message.key(),
                 message.value(),
                 message.topic());

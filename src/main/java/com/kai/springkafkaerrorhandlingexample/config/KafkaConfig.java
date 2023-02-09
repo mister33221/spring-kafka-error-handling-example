@@ -44,7 +44,7 @@ public class KafkaConfig {
         ConcurrentKafkaListenerContainerFactory<String, String> factory = new ConcurrentKafkaListenerContainerFactory<>();
         factory.setConsumerFactory(consumerFactory);
         // for blocking retry
-//        factory.setCommonErrorHandler(retryErrorHandler());
+        factory.setCommonErrorHandler(retryErrorHandler());
         consumerFactory.getListeners();
         return factory;
     }
@@ -53,10 +53,10 @@ public class KafkaConfig {
     // This is a blocking retry (will move offset only when all tries are completed) error handler configured with
     // DeadLetterPublishingRecoverer which publishes event to DLT when tries are over
     // retryErrorHandler: A bean that handles errors in the listener container
-//    public DefaultErrorHandler retryErrorHandler() {
-//        DeadLetterPublishingRecoverer recoverer = new DeadLetterPublishingRecoverer(template);
-//        return new DefaultErrorHandler(recoverer, new FixedBackOff(1000, 3));
-//    }
+    public DefaultErrorHandler retryErrorHandler() {
+        DeadLetterPublishingRecoverer recoverer = new DeadLetterPublishingRecoverer(template);
+        return new DefaultErrorHandler(recoverer, new FixedBackOff(1000, 3));
+    }
 
     // the kafka version is 2.8.3, so the bean name is RetryTopicInternalBeanNames.DESTINATION_TOPIC_CONTAINER_NAME
     // destinationTopicResolver: A bean that resolves the destination topic for a given retry topic
